@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ManagedAppConfigApplications</key>
+	<dict>
+		<key>FirstRun</key>
+		<dict>
+			<key>modified</key>
+			<date>2026-09-06T00:00:00Z</date>
+			<key>path</key>
+			<string>Manifests/ManagedAppConfigApplications/com.devscapeio.FirstRun.plist</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>date</key>
+	<date>2026-09-06T13:36:26Z</date>
+</dict>
+</plist>
