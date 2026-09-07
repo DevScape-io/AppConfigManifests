@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>pfm_app_url</key>
-	<string>https://github.com/DevScape-io/FirstRun</string>
+	<string>https://apple.com</string>
 	<key>pfm_description</key>
-	<string>Configure FirstRun, the Jamf Pro device-assignment app for iPhone, iPad, and Apple TV. A technician assigns the device to a site (Jamf Pro building) and, optionally, a role; FirstRun writes the assignment back to the device's Jamf Pro record.</string>
+	<string>Configure FirstRun, the Jamf Pro device-assignment app for iPhone, iPad, and Apple TV. A technician assigns the device to a site (Jamf Pro building) and, optionally, a role; FirstRun writes the assignment back to the device&apos;s Jamf Pro record.</string>
 	<key>pfm_documentation_url</key>
-	<string>https://github.com/DevScape-io/FirstRun/blob/main/README.md</string>
+	<string>https://guide.devscape.io/supportid/getting-started/introduction</string>
 	<key>pfm_domain</key>
 	<string>com.devscapeio.FirstRun</string>
 	<key>pfm_format_version</key>
@@ -40,7 +40,7 @@
 			<key>pfm_default</key>
 			<string>FirstRun</string>
 			<key>pfm_description</key>
-			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn't need to be unique.</string>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn&apos;t need to be unique.</string>
 			<key>pfm_name</key>
 			<string>PayloadDisplayName</string>
 			<key>pfm_require</key>
@@ -55,7 +55,7 @@
 			<string>com.devscapeio.FirstRun</string>
 			<key>pfm_description</key>
 			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
-During a profile replacement, the system updates payloads with the same 'PayloadIdentifier' and 'PayloadUUID' in the old and new profiles.</string>
+During a profile replacement, the system updates payloads with the same &apos;PayloadIdentifier&apos; and &apos;PayloadUUID&apos; in the old and new profiles.</string>
 			<key>pfm_name</key>
 			<string>PayloadIdentifier</string>
 			<key>pfm_require</key>
@@ -69,7 +69,7 @@ During a profile replacement, the system updates payloads with the same 'Payload
 			<key>pfm_default</key>
 			<string>com.devscapeio.FirstRun</string>
 			<key>pfm_description</key>
-			<string>The payload type, which each payload domain's reference page specifies.</string>
+			<string>The payload type, which each payload domain&apos;s reference page specifies.</string>
 			<key>pfm_name</key>
 			<string>PayloadType</string>
 			<key>pfm_require</key>
@@ -83,8 +83,8 @@ During a profile replacement, the system updates payloads with the same 'Payload
 			<key>pfm_default</key>
 			<string></string>
 			<key>pfm_description</key>
-			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use 'uuidgen' to generate UUIDs.
-During a profile replacement, the system updates payloads with the same 'PayloadIdentifier' and 'PayloadUUID' in the old and new profiles.</string>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use &apos;uuidgen&apos; to generate UUIDs.
+During a profile replacement, the system updates payloads with the same &apos;PayloadIdentifier&apos; and &apos;PayloadUUID&apos; in the old and new profiles.</string>
 			<key>pfm_format</key>
 			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
 			<key>pfm_name</key>
@@ -116,7 +116,7 @@ During a profile replacement, the system updates payloads with the same 'Payload
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn't need to match the organization payload value in the enclosing dictionary.</string>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn&apos;t need to match the organization payload value in the enclosing dictionary.</string>
 			<key>pfm_name</key>
 			<string>PayloadOrganization</string>
 			<key>pfm_title</key>
@@ -128,7 +128,7 @@ During a profile replacement, the system updates payloads with the same 'Payload
 			<key>pfm_description</key>
 			<string>Base URL of the Jamf Pro tenant FirstRun talks to, including the scheme.
 
-Enter the tenant root only — no trailing slash and no '/api' path — FirstRun appends its own endpoints (/api/oauth/token, /api/v1/buildings, /JSSResource/mobiledevices/…).
+Enter the tenant root only — no trailing slash and no &apos;/api&apos; path — FirstRun appends its own endpoints (/api/oauth/token, /api/v1/buildings, /JSSResource/mobiledevices/…).
 
 Example: https://your-tenant.jamfcloud.com</string>
 			<key>pfm_format</key>
@@ -136,7 +136,7 @@ Example: https://your-tenant.jamfcloud.com</string>
 			<key>pfm_name</key>
 			<string>jamfProURL</string>
 			<key>pfm_note</key>
-			<string>If this key is missing, empty, or not a parsable URL, FirstRun shows its "Configuration Required" screen instead of the onboarding flow.</string>
+			<string>If this key is missing, empty, or not a parsable URL, FirstRun shows its &quot;Configuration Required&quot; screen instead of the onboarding flow.</string>
 			<key>pfm_require</key>
 			<string>always</string>
 			<key>pfm_title</key>
@@ -170,7 +170,7 @@ The associated API role needs, at minimum: Read Mobile Devices, Update Mobile De
 			<key>pfm_name</key>
 			<string>oauthClientSecret</string>
 			<key>pfm_note</key>
-			<string>This value is a credential. Deliver it in an encrypted profile or through your MDM's App Configuration, never in a plain-text profile committed to source control, and rotate it if it is ever exported in the clear.</string>
+			<string>This value is a credential. Deliver it in an encrypted profile or through your MDM&apos;s App Configuration, never in a plain-text profile committed to source control, and rotate it if it is ever exported in the clear.</string>
 			<key>pfm_require</key>
 			<string>always</string>
 			<key>pfm_sensitive</key>
@@ -186,13 +186,13 @@ The associated API role needs, at minimum: Read Mobile Devices, Update Mobile De
 			<key>pfm_default</key>
 			<string>$SERIALNUMBER</string>
 			<key>pfm_description</key>
-			<string>Serial number of the device being set up. It must match the device's record in Jamf Pro inventory — FirstRun looks the device up by serial and refuses to submit if the lookup does not match.
+			<string>Serial number of the device being set up. It must match the device&apos;s record in Jamf Pro inventory — FirstRun looks the device up by serial and refuses to submit if the lookup does not match.
 
 Leave this as the Jamf Pro variable $SERIALNUMBER so the serial is substituted at install time, or type a literal serial for a single-device test deployment.</string>
 			<key>pfm_name</key>
 			<string>serialNumber</string>
 			<key>pfm_note</key>
-			<string>FirstRun treats any value that still begins with '$' as an unsubstituted variable and refuses to start. If devices land on the "Configuration Required" screen with a literal $SERIALNUMBER, the MDM is not performing variable substitution — check that the value is delivered as App Configuration rather than pasted into a static payload.</string>
+			<string>FirstRun treats any value that still begins with &apos;$&apos; as an unsubstituted variable and refuses to start. If devices land on the &quot;Configuration Required&quot; screen with a literal $SERIALNUMBER, the MDM is not performing variable substitution — check that the value is delivered as App Configuration rather than pasted into a static payload.</string>
 			<key>pfm_range_list</key>
 			<array>
 				<string>$SERIALNUMBER</string>
@@ -241,7 +241,7 @@ Leave this list empty (or omit the key) to skip the Role step entirely — the t
 			<key>pfm_description</key>
 			<string>Optional helper text shown beneath a role once the technician selects it.
 
-Each entry's key is the role name as it appears in Setup Role Options; the value is the description. Matching ignores letter case and surrounding whitespace. Roles with no entry — or with an empty description — simply show no helper text.</string>
+Each entry&apos;s key is the role name as it appears in Setup Role Options; the value is the description. Matching ignores letter case and surrounding whitespace. Roles with no entry — or with an empty description — simply show no helper text.</string>
 			<key>pfm_name</key>
 			<string>setupRoleDescriptions</string>
 			<key>pfm_note</key>
@@ -330,7 +330,7 @@ Written only when Setup Role Extension Attribute is also set and a role was chos
 		<string>system</string>
 	</array>
 	<key>pfm_title</key>
-	<string>FirstRun</string>
+	<string>FirstRun by DevScape.io</string>
 	<key>pfm_unique</key>
 	<true/>
 	<key>pfm_version</key>
