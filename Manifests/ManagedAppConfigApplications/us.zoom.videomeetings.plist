@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://www.zoom.com/en/products/workplace/</string>
+	<key>pfm_description</key>
+	<string>Configure Zoom Workplace on iPhone and iPad — which sign-in methods are offered, whose meetings the client may join, and which in-meeting features are available.
+
+Prefix any key name with ‘mandatory:’ to lock the setting so the user cannot change it in the app — mandatory:TurnOffVideoCameraOnJoin rather than TurnOffVideoCameraOnJoin. A few keys, such as mandatory:EnableAppleLogin, are documented by Zoom with the prefix already attached; leave those exactly as they are.</string>
+	<key>pfm_documentation_url</key>
+	<string>https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0064102</string>
+	<key>pfm_domain</key>
+	<string>us.zoom.videomeetings</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures Zoom Workplace</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Zoom Workplace</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>us.zoom.videomeetings</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>us.zoom.videomeetings</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Token from the Zoom web portal that enrols this device into Zoom Device Management.</string>
+			<key>pfm_name</key>
+			<string>SetEnrollToken4CloudMDM</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Zoom Device Management Enrollment Token</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the sign-in screen defaults to SSO.</string>
+			<key>pfm_name</key>
+			<string>ForceLoginWithSSO</string>
+			<key>pfm_title</key>
+			<string>Force Login with SSO</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The default SSO vanity URL, entered as the subdomain only — for hooli.zoom.us, enter hooli. The user can still change it.</string>
+			<key>pfm_name</key>
+			<string>SetSSOURL</string>
+			<key>pfm_title</key>
+			<string>SSO URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>hooli</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The SSO vanity URL, set and locked so the user cannot change it.</string>
+			<key>pfm_name</key>
+			<string>ForceSSOURL</string>
+			<key>pfm_title</key>
+			<string>Force SSO URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>hooli</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Zoom is stopped from automatically reopening the SSO URL it used last.</string>
+			<key>pfm_name</key>
+			<string>DisableAutoLaunchSSO</string>
+			<key>pfm_title</key>
+			<string>Disable Auto-Launch SSO</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the SSO flow runs in Zoom’s own embedded browser rather than the system browser.</string>
+			<key>pfm_name</key>
+			<string>EnableEmbedBrowserForSSO</string>
+			<key>pfm_title</key>
+			<string>Use Embedded Browser for SSO</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The browser every SSO authentication flow must use.</string>
+			<key>pfm_name</key>
+			<string>SetSSOBrowser</string>
+			<key>pfm_title</key>
+			<string>SSO Browser</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>safari</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the SSO option is removed from the sign-in screen.</string>
+			<key>pfm_name</key>
+			<string>DisableLoginWithSSO</string>
+			<key>pfm_title</key>
+			<string>Remove SSO Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the email and password option is removed from the sign-in screen.</string>
+			<key>pfm_name</key>
+			<string>DisableLoginWithEmail</string>
+			<key>pfm_title</key>
+			<string>Remove Email Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Google sign-in option is removed.</string>
+			<key>pfm_name</key>
+			<string>DisableGoogleLogin</string>
+			<key>pfm_title</key>
+			<string>Remove Google Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Facebook sign-in option is removed.</string>
+			<key>pfm_name</key>
+			<string>DisableFacebookLogin</string>
+			<key>pfm_title</key>
+			<string>Remove Facebook Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Microsoft sign-in option is removed.</string>
+			<key>pfm_name</key>
+			<string>DisableLoginWithMicrosoft</string>
+			<key>pfm_title</key>
+			<string>Remove Microsoft Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users must sign in with a Microsoft account.</string>
+			<key>pfm_name</key>
+			<string>EnforceLoginWithMicrosoft</string>
+			<key>pfm_title</key>
+			<string>Require Microsoft Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Sign in with Apple is offered.</string>
+			<key>pfm_name</key>
+			<string>mandatory:EnableAppleLogin</string>
+			<key>pfm_note</key>
+			<string>Zoom documents this key with the mandatory: prefix already in the name. Keep it exactly as written.</string>
+			<key>pfm_title</key>
+			<string>Allow Apple Login</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Sign Up option is removed from the app.</string>
+			<key>pfm_name</key>
+			<string>DisableUserSignUp</string>
+			<key>pfm_title</key>
+			<string>Disable Sign Up</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users are stopped from switching between multiple signed-in accounts.</string>
+			<key>pfm_name</key>
+			<string>DisableMultipleAccountsSwitch</string>
+			<key>pfm_title</key>
+			<string>Disable Account Switching</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The email domains users may sign in with. Separate multiple domains with an ampersand.</string>
+			<key>pfm_name</key>
+			<string>SetEmailDomainsRestrictedToLogin</string>
+			<key>pfm_title</key>
+			<string>Allowed Email Domains</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>example.com&amp;example.org</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Restricts the client to joining meetings hosted by the account IDs listed here.</string>
+			<key>pfm_name</key>
+			<string>SetAccountIDsRestrictedToJoin</string>
+			<key>pfm_title</key>
+			<string>Allowed Account IDs to Join</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>abc123XYZ</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users must be authenticated before joining a meeting from the mobile app.</string>
+			<key>pfm_name</key>
+			<string>EnforceSignInToJoin</string>
+			<key>pfm_title</key>
+			<string>Require Sign-In to Join Meetings</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether authentication in the app is required to join any meeting at all.</string>
+			<key>pfm_name</key>
+			<string>EnforceAppSignInToJoin</string>
+			<key>pfm_title</key>
+			<string>Require App Sign-In to Join Any Meeting</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users must be authenticated before joining a webinar from the mobile app.</string>
+			<key>pfm_name</key>
+			<string>EnforceSignInToJoinForWebinar</string>
+			<key>pfm_title</key>
+			<string>Require Sign-In to Join Webinars</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether authentication in the app is required to join any webinar at all.</string>
+			<key>pfm_name</key>
+			<string>EnforceAppSignInToJoinForWebinar</string>
+			<key>pfm_title</key>
+			<string>Require App Sign-In to Join Any Webinar</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Face ID or Touch ID is required to open the Zoom app.</string>
+			<key>pfm_name</key>
+			<string>RequireBiometricAuthentication</string>
+			<key>pfm_title</key>
+			<string>Require Biometric Unlock</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Token that requires internal meeting authentication for this device.</string>
+			<key>pfm_name</key>
+			<string>SetDevicePolicyToken</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Device Policy Token</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the user may switch between Zoom commercial and Zoom for Government.</string>
+			<key>pfm_name</key>
+			<string>EnableCloudSwitch</string>
+			<key>pfm_title</key>
+			<string>Allow Cloud Switching</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>A tag embedded in every HTTP request the Zoom app makes, so its traffic can be attributed to this device.</string>
+			<key>pfm_name</key>
+			<string>EmbedDeviceTag</string>
+			<key>pfm_title</key>
+			<string>Device Tag</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>corporate-ipad</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether certificate pinning is switched off.</string>
+			<key>pfm_name</key>
+			<string>DisableCertPin</string>
+			<key>pfm_note</key>
+			<string>Pinning is what stops an interception proxy silently sitting in front of Zoom. Turn it off only where a TLS-inspecting proxy is a deliberate, documented part of your network.</string>
+			<key>pfm_title</key>
+			<string>Disable Certificate Pinning</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether media uses its own ports — audio 8803, screen share 8802, video 8801.</string>
+			<key>pfm_name</key>
+			<string>EnableIndependentDataPort</string>
+			<key>pfm_title</key>
+			<string>Use Independent Media Ports</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether screenshots of the Zoom app are blocked. Users also cannot share the Zoom app during a screen share.</string>
+			<key>pfm_name</key>
+			<string>DisableScreenshot</string>
+			<key>pfm_title</key>
+			<string>Block Screenshots</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether sharing a screen in meetings and webinars is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableShareScreen</string>
+			<key>pfm_title</key>
+			<string>Disable Screen Sharing</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the option to share the whole desktop is removed when screen sharing.</string>
+			<key>pfm_name</key>
+			<string>DisableDesktopShare</string>
+			<key>pfm_title</key>
+			<string>Disable Desktop Sharing</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether recording to the cloud is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableCloudRecording</string>
+			<key>pfm_title</key>
+			<string>Disable Cloud Recording</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether in-meeting chat is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableMeetingChat</string>
+			<key>pfm_title</key>
+			<string>Disable In-Meeting Chat</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Zoom Apps button is hidden.</string>
+			<key>pfm_name</key>
+			<string>DisableZoomApps</string>
+			<key>pfm_title</key>
+			<string>Hide Zoom Apps</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Classic Whiteboard feature is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableWhiteBoard</string>
+			<key>pfm_title</key>
+			<string>Disable Classic Whiteboard</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Zoom Whiteboard feature is disabled in meetings and webinars.</string>
+			<key>pfm_name</key>
+			<string>DisableInMeetingWhiteBoard</string>
+			<key>pfm_title</key>
+			<string>Disable Zoom Whiteboard</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether all captioning is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableClosedCaptioning</string>
+			<key>pfm_title</key>
+			<string>Disable Captioning</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether meeting reactions are disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableMeetingReactions</string>
+			<key>pfm_title</key>
+			<string>Disable Meeting Reactions</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the AI meeting summary feature is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableSmartMeetingSummaries</string>
+			<key>pfm_title</key>
+			<string>Disable Meeting Summary</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the AI meeting questions feature is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableAICQueries</string>
+			<key>pfm_title</key>
+			<string>Disable Meeting Questions</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the camera is disabled for outgoing video.</string>
+			<key>pfm_name</key>
+			<string>DisableVideoCamera</string>
+			<key>pfm_title</key>
+			<string>Disable Sending Video</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether incoming video is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableReceiveVideo</string>
+			<key>pfm_title</key>
+			<string>Disable Receiving Video</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the camera is off by default when joining a meeting.</string>
+			<key>pfm_name</key>
+			<string>TurnOffVideoCameraOnJoin</string>
+			<key>pfm_title</key>
+			<string>Camera Off on Join</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the video preview is always shown before joining a meeting.</string>
+			<key>pfm_name</key>
+			<string>AlwaysShowVideoPreviewDialog</string>
+			<key>pfm_title</key>
+			<string>Always Show Video Preview</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Computer Audio is removed from the meeting audio options.</string>
+			<key>pfm_name</key>
+			<string>DisableComputerAudio</string>
+			<key>pfm_title</key>
+			<string>Disable Computer Audio</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether audio connects automatically with computer audio on joining.</string>
+			<key>pfm_name</key>
+			<string>AutoJoinVOIP</string>
+			<key>pfm_title</key>
+			<string>Auto-Join Computer Audio</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Virtual Background feature is disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableVirtualBkgnd</string>
+			<key>pfm_title</key>
+			<string>Disable Virtual Background</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether video filters are disabled.</string>
+			<key>pfm_name</key>
+			<string>DisableVideoFilters</string>
+			<key>pfm_title</key>
+			<string>Disable Video Filters</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users are stopped from sending files through Chat.</string>
+			<key>pfm_name</key>
+			<string>DisableIMFileTransfer</string>
+			<key>pfm_title</key>
+			<string>Disable File Transfer in Chat</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Domains that are allowed to send files through Chat when file transfer is otherwise restricted.</string>
+			<key>pfm_name</key>
+			<string>AllowedIMFileTransferDomain</string>
+			<key>pfm_title</key>
+			<string>Allowed File Transfer Domains</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>example.com</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether link previews are disabled in Chat.</string>
+			<key>pfm_name</key>
+			<string>DisableLinkPreviewInChat</string>
+			<key>pfm_title</key>
+			<string>Disable Link Previews in Chat</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Chat system notifications are muted while the user is in a meeting.</string>
+			<key>pfm_name</key>
+			<string>MuteIMNotificationWhenInMeeting</string>
+			<key>pfm_title</key>
+			<string>Mute Chat Notifications in Meetings</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether reminder notifications are shown for upcoming meetings.</string>
+			<key>pfm_name</key>
+			<string>MeetingReminder</string>
+			<key>pfm_title</key>
+			<string>Meeting Reminders</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Controls the Sync Zoom Meetings From Calendars setting.</string>
+			<key>pfm_name</key>
+			<string>SyncMeetingFromCalendar</string>
+			<key>pfm_title</key>
+			<string>Sync Meetings from Calendar</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether users may sync a newly scheduled meeting to their local calendar.</string>
+			<key>pfm_name</key>
+			<string>SyncMeetingToCalendar</string>
+			<key>pfm_title</key>
+			<string>Sync Meetings to Calendar</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>Zoom Workplace</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>

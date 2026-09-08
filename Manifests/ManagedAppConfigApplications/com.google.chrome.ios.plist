@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://chromeenterprise.google/browser/download/</string>
+	<key>pfm_description</key>
+	<string>Configure Google Chrome on iPhone and iPad — site allow and block lists, Safe Browsing, Incognito, the search provider, managed bookmarks, and what Chrome reports back.
+
+Chrome does not read policies from the top level of an app configuration. Everything goes inside the ChromePolicy dictionary, which is how this manifest is laid out.</string>
+	<key>pfm_documentation_url</key>
+	<string>https://www.chromium.org/administrators/ios-mdm-policy-format/</string>
+	<key>pfm_domain</key>
+	<string>com.google.chrome.ios</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures Google Chrome</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Google Chrome</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.google.chrome.ios</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.google.chrome.ios</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The Chrome policies applied to this device. Every policy Chrome reads on iOS is nested inside this one dictionary rather than sitting at the top level of the app configuration.</string>
+			<key>pfm_name</key>
+			<string>ChromePolicy</string>
+			<key>pfm_note</key>
+			<string>A policy written at the top level of the app configuration instead of inside this dictionary is silently ignored. This is the single most common reason a Chrome iOS configuration appears to do nothing.</string>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>98</string>
+					<key>pfm_description</key>
+					<string>Sites the browser refuses to load, as URL patterns. Up to 1,000 exceptions can be listed in Allow Access to URLs.
+
+A single entry of * blocks everything, which is how an allow-list-only browser is built.</string>
+					<key>pfm_name</key>
+					<string>URLBlocklist</string>
+					<key>pfm_note</key>
+					<string>This does not stop in-page JavaScript from fetching a blocked URL with XMLHttpRequest, and it does not stop a page rewriting the address bar through the History API. It is a navigation filter, not a network filter.</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_title</key>
+							<string>URL pattern</string>
+							<key>pfm_type</key>
+							<string>string</string>
+							<key>pfm_value_placeholder</key>
+							<string>example.com</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Block Access to URLs</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>98</string>
+					<key>pfm_description</key>
+					<string>Exceptions to Block Access to URLs, as URL patterns. The most specific pattern wins, and this list takes precedence over the block list. Limited to 1,000 entries.</string>
+					<key>pfm_name</key>
+					<string>URLAllowlist</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_title</key>
+							<string>URL pattern</string>
+							<key>pfm_type</key>
+							<string>string</string>
+							<key>pfm_value_placeholder</key>
+							<string>intranet.example.com</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Allow Access to URLs</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>90</string>
+					<key>pfm_description</key>
+					<string>Whether the user may open pages in Incognito mode.
+
+Forced opens every page in Incognito, which means nothing is retained between sessions.</string>
+					<key>pfm_name</key>
+					<string>IncognitoModeAvailability</string>
+					<key>pfm_note</key>
+					<string>On iOS a change to this policy only takes effect when Chrome is relaunched.</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>0 — Available</string>
+						<string>1 — Disabled</string>
+						<string>2 — Forced</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Incognito Mode</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>How hard Safe Browsing works.
+
+Enhanced gives better protection but sends more browsing information to Google.</string>
+					<key>pfm_name</key>
+					<string>SafeBrowsingProtectionLevel</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>0 — No protection</string>
+						<string>1 — Standard protection</string>
+						<string>2 — Enhanced protection</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Safe Browsing Protection Level</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether users are stopped from clicking through a Safe Browsing warning for malware or phishing.
+
+This does not cover certificate warnings, which are a separate interstitial.</string>
+					<key>pfm_name</key>
+					<string>DisableSafeBrowsingProceedAnyway</string>
+					<key>pfm_title</key>
+					<string>Block Proceeding Past Safe Browsing Warnings</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>135</string>
+					<key>pfm_description</key>
+					<string>Which downloads are blocked outright, without the user being able to override the decision.</string>
+					<key>pfm_name</key>
+					<string>DownloadRestrictions</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>3</integer>
+						<integer>4</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>0 — No special restrictions</string>
+						<string>1 — Block dangerous downloads and dangerous file types</string>
+						<string>2 — Block dangerous, uncommon, and unwanted downloads</string>
+						<string>3 — Block all downloads</string>
+						<string>4 — Block malicious downloads (recommended)</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Download Restrictions</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>97</string>
+					<key>pfm_description</key>
+					<string>Whether the user may sign in to Chrome itself, and so use account-backed features such as Sync.</string>
+					<key>pfm_name</key>
+					<string>BrowserSignin</string>
+					<key>pfm_note</key>
+					<string>On iOS, setting this to Disabled signs a signed-in user out immediately. Local data such as bookmarks and passwords is preserved.</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>0 — Disabled</string>
+						<string>1 — Enabled</string>
+						<string>2 — Forced</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Browser Sign-In</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Enrolment token from the Google Admin console, which registers this browser with Chrome Enterprise Core.</string>
+					<key>pfm_name</key>
+					<string>CloudManagementEnrollmentToken</string>
+					<key>pfm_sensitive</key>
+					<true/>
+					<key>pfm_title</key>
+					<string>Cloud Management Enrollment Token</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>••••••••••••••••</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>97</string>
+					<key>pfm_description</key>
+					<string>Patterns controlling which Google accounts are visible in Chrome. An account is shown only if its name matches one of them.
+
+* matches zero or more characters; escape a literal * or \ with a backslash. Leave unset to show every account on the device.</string>
+					<key>pfm_name</key>
+					<string>RestrictAccountsToPatterns</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_title</key>
+							<string>Pattern</string>
+							<key>pfm_type</key>
+							<string>string</string>
+							<key>pfm_value_placeholder</key>
+							<string>*@example.com</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Restrict Visible Accounts</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>96</string>
+					<key>pfm_description</key>
+					<string>Whether synchronising data with Google is turned off.
+
+To turn Chrome Sync off properly, turn the service off in the Google Admin console as well.</string>
+					<key>pfm_name</key>
+					<string>SyncDisabled</string>
+					<key>pfm_title</key>
+					<string>Disable Sync</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>121</string>
+					<key>pfm_description</key>
+					<string>Whether Chrome data — cookies and website local storage included — may be captured in iCloud and local device backups.
+
+Set false to keep it out of both.</string>
+					<key>pfm_name</key>
+					<string>AllowChromeDataInBackups</string>
+					<key>pfm_title</key>
+					<string>Allow Chrome Data in Backups</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether typing non-URL text in the address bar runs a search. Set it, and the user cannot change the search provider.</string>
+					<key>pfm_name</key>
+					<string>DefaultSearchProviderEnabled</string>
+					<key>pfm_title</key>
+					<string>Default Search Provider</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Display name of the default search provider. Left unset, Chrome uses the hostname from the search URL.</string>
+					<key>pfm_name</key>
+					<string>DefaultSearchProviderName</string>
+					<key>pfm_title</key>
+					<string>Search Provider Name</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>Example Intranet Search</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>URL the default search provider is queried with. It must contain {searchTerms}, which is replaced by what the user typed.</string>
+					<key>pfm_name</key>
+					<string>DefaultSearchProviderSearchURL</string>
+					<key>pfm_title</key>
+					<string>Search Provider URL</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>https://search.example.com/search?q={searchTerms}</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>URL queried for search suggestions. It must contain {searchTerms}.</string>
+					<key>pfm_name</key>
+					<string>DefaultSearchProviderSuggestURL</string>
+					<key>pfm_title</key>
+					<string>Search Provider Suggest URL</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>https://search.example.com/complete?q={searchTerms}</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether the address bar offers search suggestions. Suggestions drawn from bookmarks and history are unaffected.</string>
+					<key>pfm_name</key>
+					<string>SearchSuggestEnabled</string>
+					<key>pfm_title</key>
+					<string>Search Suggestions</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether sites may open pop-up windows.</string>
+					<key>pfm_name</key>
+					<string>DefaultPopupsSetting</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>1</integer>
+						<integer>2</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>1 — Allow all sites</string>
+						<string>2 — Block all sites</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Pop-ups</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Sites permitted to open pop-ups, as URL patterns. Wildcards are allowed.</string>
+					<key>pfm_name</key>
+					<string>PopupsAllowedForUrls</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_title</key>
+							<string>URL pattern</string>
+							<key>pfm_type</key>
+							<string>string</string>
+							<key>pfm_value_placeholder</key>
+							<string>contoso.com</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Allow Pop-ups On</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Sites blocked from opening pop-ups, as URL patterns. Wildcards are allowed.</string>
+					<key>pfm_name</key>
+					<string>PopupsBlockedForUrls</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_title</key>
+							<string>URL pattern</string>
+							<key>pfm_type</key>
+							<string>string</string>
+							<key>pfm_value_placeholder</key>
+							<string>example.com</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Block Pop-ups On</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether Chrome offers to remember passwords. Passwords already saved keep working when this is off.</string>
+					<key>pfm_name</key>
+					<string>PasswordManagerEnabled</string>
+					<key>pfm_title</key>
+					<string>Password Manager</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>120</string>
+					<key>pfm_description</key>
+					<string>Whether users may send passwords to, and receive them from, family group members.
+
+Managed accounts cannot join a family group, so this has no effect on them.</string>
+					<key>pfm_name</key>
+					<string>PasswordSharingEnabled</string>
+					<key>pfm_title</key>
+					<string>Password Sharing</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether Autofill may suggest, fill, and save address information.</string>
+					<key>pfm_name</key>
+					<string>AutofillAddressEnabled</string>
+					<key>pfm_title</key>
+					<string>Autofill Addresses</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether Autofill may suggest, fill, and save credit card information.</string>
+					<key>pfm_name</key>
+					<string>AutofillCreditCardEnabled</string>
+					<key>pfm_title</key>
+					<string>Autofill Credit Cards</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether browsing history is discarded rather than saved. Turning this on also switches off tab syncing.</string>
+					<key>pfm_name</key>
+					<string>SavingBrowserHistoryDisabled</string>
+					<key>pfm_title</key>
+					<string>Disable Browsing History</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether users may add, remove, or change bookmarks. Existing bookmarks stay usable either way.</string>
+					<key>pfm_name</key>
+					<string>EditBookmarksEnabled</string>
+					<key>pfm_title</key>
+					<string>Allow Editing Bookmarks</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Bookmarks pushed into a folder the user cannot rearrange — though they can hide it from the bookmarks bar.
+
+Each entry needs a name and a url. An entry with a name and a children list instead of a url becomes a subfolder. Chrome completes a partial URL the way the address bar would, so example.com becomes https://example.com/.</string>
+					<key>pfm_name</key>
+					<string>ManagedBookmarks</string>
+					<key>pfm_subkeys</key>
+					<array>
+						<dict>
+							<key>pfm_subkeys</key>
+							<array>
+								<dict>
+									<key>pfm_description</key>
+									<string>The bookmark’s title, as it appears in the folder.</string>
+									<key>pfm_name</key>
+									<string>name</string>
+									<key>pfm_require</key>
+									<string>always</string>
+									<key>pfm_title</key>
+									<string>Name</string>
+									<key>pfm_type</key>
+									<string>string</string>
+									<key>pfm_value_placeholder</key>
+									<string>Intranet</string>
+								</dict>
+								<dict>
+									<key>pfm_description</key>
+									<string>The address the bookmark opens. Leave it out and add a children list instead to make this entry a subfolder.</string>
+									<key>pfm_name</key>
+									<string>url</string>
+									<key>pfm_title</key>
+									<string>URL</string>
+									<key>pfm_type</key>
+									<string>string</string>
+									<key>pfm_value_placeholder</key>
+									<string>intranet.example.com</string>
+								</dict>
+							</array>
+							<key>pfm_title</key>
+							<string>Bookmark</string>
+							<key>pfm_type</key>
+							<string>dictionary</string>
+						</dict>
+					</array>
+					<key>pfm_title</key>
+					<string>Managed Bookmarks</string>
+					<key>pfm_type</key>
+					<string>array</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>99</string>
+					<key>pfm_description</key>
+					<string>A page to open instead of Chrome’s New Tab page.</string>
+					<key>pfm_format</key>
+					<string>^https?://[^\s/]+(/[^\s]*)?$</string>
+					<key>pfm_name</key>
+					<string>NewTabPageLocation</string>
+					<key>pfm_title</key>
+					<string>New Tab Page URL</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>https://intranet.example.com</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>93</string>
+					<key>pfm_description</key>
+					<string>Whether suggested content is shown on the New Tab page.</string>
+					<key>pfm_name</key>
+					<string>NTPContentSuggestionsEnabled</string>
+					<key>pfm_title</key>
+					<string>New Tab Page Content Suggestions</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether the built-in translation features are offered. Leave unset to let users decide.</string>
+					<key>pfm_name</key>
+					<string>TranslateEnabled</string>
+					<key>pfm_title</key>
+					<string>Translation</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether users may print from Chrome.</string>
+					<key>pfm_name</key>
+					<string>PrintingEnabled</string>
+					<key>pfm_title</key>
+					<string>Printing</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>112</string>
+					<key>pfm_description</key>
+					<string>Whether the shopping list feature is available.</string>
+					<key>pfm_name</key>
+					<string>ShoppingListEnabled</string>
+					<key>pfm_title</key>
+					<string>Shopping List</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>110</string>
+					<key>pfm_description</key>
+					<string>Whether Chrome may ask the user to rate it on the App Store, at most once a year.</string>
+					<key>pfm_name</key>
+					<string>AppStoreRatingEnabled</string>
+					<key>pfm_title</key>
+					<string>App Store Rating Prompt</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>112</string>
+					<key>pfm_description</key>
+					<string>Whether Chrome may promote its iOS credential provider extension to the user.</string>
+					<key>pfm_name</key>
+					<string>CredentialProviderPromoEnabled</string>
+					<key>pfm_title</key>
+					<string>Credential Provider Promo</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether anonymous usage and crash data is sent to Google.
+
+Set false and the user cannot turn it back on; leave unset and the choice is theirs.</string>
+					<key>pfm_name</key>
+					<string>MetricsReportingEnabled</string>
+					<key>pfm_title</key>
+					<string>Usage and Crash Reporting</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>90</string>
+					<key>pfm_description</key>
+					<string>Whether the URLs of pages the user visits are sent to Google to improve search and browsing.</string>
+					<key>pfm_name</key>
+					<string>UrlKeyedAnonymizedDataCollectionEnabled</string>
+					<key>pfm_title</key>
+					<string>URL-Keyed Anonymized Data Collection</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>88</string>
+					<key>pfm_description</key>
+					<string>Whether browser telemetry is uploaded to the Google Admin console.
+
+This only does anything once the browser is enrolled with a Cloud Management Enrollment Token.</string>
+					<key>pfm_name</key>
+					<string>CloudReportingEnabled</string>
+					<key>pfm_title</key>
+					<string>Cloud Reporting</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>130</string>
+					<key>pfm_description</key>
+					<string>The default for every generative AI feature in Chrome that does not have its own policy set.
+
+A feature that only supports on and off treats 0 and 1 alike as on.</string>
+					<key>pfm_name</key>
+					<string>GenAiDefaultSettings</string>
+					<key>pfm_range_list</key>
+					<array>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>0 — Allowed, and may improve AI models</string>
+						<string>1 — Allowed, without improving AI models</string>
+						<string>2 — Not allowed</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Generative AI Default</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+				</dict>
+				<dict>
+					<key>pfm_app_min</key>
+					<string>123</string>
+					<key>pfm_description</key>
+					<string>Minutes without user input before Chrome runs the actions set in IdleTimeoutActions. The minimum is 1 minute.</string>
+					<key>pfm_name</key>
+					<string>IdleTimeout</string>
+					<key>pfm_range_min</key>
+					<integer>1</integer>
+					<key>pfm_title</key>
+					<string>Idle Timeout</string>
+					<key>pfm_type</key>
+					<string>integer</string>
+					<key>pfm_value_unit</key>
+					<string>minutes</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>Chrome Policy</string>
+			<key>pfm_type</key>
+			<string>dictionary</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The same policy dictionary as a Base64-encoded property list in a single string.
+
+For MDMs that can only send string values. Where both are delivered, set one or the other, not both.</string>
+			<key>pfm_name</key>
+			<string>EncodedChromePolicy</string>
+			<key>pfm_note</key>
+			<string>Legacy. Use Chrome Policy above unless your MDM genuinely cannot send a nested dictionary.</string>
+			<key>pfm_title</key>
+			<string>Encoded Chrome Policy</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4…</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>Google Chrome</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://www.netskope.com/</string>
+	<key>pfm_description</key>
+	<string>Configure the Netskope Client on iPhone and iPad — which tenant the device enrols against, who the traffic is attributed to, and the Secure Enrolment tokens that authorise it.
+
+The client’s tunnel behaviour is configured elsewhere: SingleSignOn, ForceDisabledSteering, TerminateOnSleepThreshold, the IDPMode / IDPTenant / IDPDomain / IDPScope / IDPpreferEphemeral group, CustomDeviceName, and CustomDeviceSerialNumber go in the custom data of the VPN payload whose VPN identifier is com.netskope.Netskope. Only the keys below are read as app configuration.</string>
+	<key>pfm_documentation_url</key>
+	<string>https://docs.netskope.com/en/deploy-client-on-ios-using-jamf-pro</string>
+	<key>pfm_domain</key>
+	<string>com.netskope.Netskope</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures the Netskope Client</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Netskope Client</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.netskope.Netskope</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.netskope.Netskope</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Your organisation’s ID in the Netskope tenant.
+
+Take it from Netskope Deployment Parameters in the admin console rather than typing it by hand.</string>
+			<key>pfm_name</key>
+			<string>OrgKey</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Organization Key</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>0123456789abcdef0123456789abcdef</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Hostname of the addon server the client enrols against — addon- followed by your tenant URL.</string>
+			<key>pfm_name</key>
+			<string>AddonHost</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Addon Host</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>addon-example.goskope.com</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Email address of the device’s assigned user, which is how Netskope identifies who the traffic belongs to.
+
+Use your MDM’s user variable — $EMAIL in Jamf Pro, {{mail}} in Intune.</string>
+			<key>pfm_name</key>
+			<string>UserEmail</string>
+			<key>pfm_note</key>
+			<string>The Jamf Pro variable is case-sensitive and must be written in capitals: $EMAIL. A lower-case $email is delivered literally and enrolment fails.</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>User Email</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$EMAIL</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Secure Enrolment authentication token, which proves the enrolment request came from your organisation.
+
+Required when Secure Enrolment is turned on for your tenant; find it under Netskope Deployment Parameters.</string>
+			<key>pfm_name</key>
+			<string>enrollauthtoken</string>
+			<key>pfm_note</key>
+			<string>This value is a credential. Deliver it in an encrypted profile, never in a plain-text profile committed to source control, and rotate it if it is ever exported in the clear.</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Enrollment Authentication Token</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Secure Enrolment encryption token, which encrypts the client’s initial configuration.
+
+Optional, and only meaningful when Secure Enrolment is turned on.</string>
+			<key>pfm_name</key>
+			<string>enrollencryptiontoken</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Enrollment Encryption Token</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>How long a per-app VPN connection is held while the tunnel is being established, so a request does not fail in the gap.
+
+Per-app VPN deployments only.</string>
+			<key>pfm_name</key>
+			<string>OnDemandConnectionsHoldTimeout</string>
+			<key>pfm_title</key>
+			<string>On-Demand Connections Hold Timeout</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>seconds</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>Netskope Client</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>
