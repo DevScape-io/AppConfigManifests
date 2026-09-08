@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://www.microsoft.com/en-us/microsoft-365/outlook-mobile-for-android-and-ios</string>
+	<key>pfm_description</key>
+	<string>Configure Microsoft Outlook on iPhone and iPad — push the account so the user never types a server name, restrict the app to that one organisation account, and set the mail, calendar, and S/MIME behaviour they start with.
+
+These are the keys Outlook reads over the MDM channel, on an enrolled device. Outlook also honours a larger set delivered through Intune App Protection Policy to unenrolled devices; those are not configured here.</string>
+	<key>pfm_documentation_url</key>
+	<string>https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune</string>
+	<key>pfm_domain</key>
+	<string>com.microsoft.Office.Outlook</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures Microsoft Outlook</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Microsoft Outlook</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.microsoft.Office.Outlook</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.microsoft.Office.Outlook</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Email address the account sends and receives mail as.
+
+Use your MDM’s user variable so it is filled in per device — $EMAIL in Jamf Pro, {{mail}} in Intune.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.EmailProfile.EmailAddress</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Email Address</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$EMAIL</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>User principal name, or username, the account authenticates with.
+
+Use your MDM’s UPN variable — $EMAIL in Jamf Pro, {{userprincipalname}} in Intune.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.EmailProfile.EmailUPN</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Email UPN</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$EMAIL</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>ModernAuth</string>
+			<key>pfm_description</key>
+			<string>The authentication model this account uses. ModernAuth is the only accepted value.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.EmailProfile.AccountType</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>ModernAuth</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Account Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether Outlook is restricted to the single organisation account named below — personal mail and third-party storage accounts cannot be added.</string>
+			<key>pfm_name</key>
+			<string>IntuneMAMAllowedAccountsOnly</string>
+			<key>pfm_note</key>
+			<string>This key is a string, not a boolean: it takes ‘Enabled’ or ‘Disabled’, and it needs IntuneMAMUPN set to the account you are allowing. Setting it without that UPN locks the user out of adding any account at all.</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>Enabled</string>
+				<string>Disabled</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Organization Allowed Accounts Only</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The one account allowed when Organization Allowed Accounts Only is enabled.
+
+Use your MDM’s UPN variable — $EMAIL in Jamf Pro, {{userprincipalname}} in Intune.</string>
+			<key>pfm_name</key>
+			<string>IntuneMAMUPN</string>
+			<key>pfm_title</key>
+			<string>Allowed Account UPN</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$EMAIL</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the inbox is split into Focused and Other. Turn it off to give users one undivided inbox.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.FocusedInbox</string>
+			<key>pfm_title</key>
+			<string>Focused Inbox</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether Face ID or Touch ID is required to open Outlook.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Auth.Biometric</string>
+			<key>pfm_title</key>
+			<string>Require Biometric Unlock</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the biometric requirement on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Auth.Biometric.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Require Biometric Unlock — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether Outlook contacts are written into the device’s own Contacts app, so they appear on incoming calls.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Contacts.LocalSyncEnabled</string>
+			<key>pfm_title</key>
+			<string>Sync Contacts to iOS</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change contact sync on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Contacts.LocalSyncEnabled.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Sync Contacts to iOS — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>How Outlook treats images hosted outside the message.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.BlockExternalImagesSetting</string>
+			<key>pfm_note</key>
+			<string>This key supersedes the older Mail.BlockExternalImagesEnabled boolean. Where both are set, this one wins.</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Always block</string>
+				<string>Load only for safe senders</string>
+				<string>Always load</string>
+			</array>
+			<key>pfm_title</key>
+			<string>External Images</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the external images setting on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.BlockExternalImagesSetting.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>External Images — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether Outlook warns the user, as they compose, that a recipient is outside the organisation.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.ExternalRecipientsToolTipEnabled</string>
+			<key>pfm_title</key>
+			<string>External Recipients MailTip</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Your organisation’s own domains, so the External Recipients MailTip still knows who is internal while the device is offline.
+
+List root domains comma-separated; subdomains are covered automatically.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.InternalDomains</string>
+			<key>pfm_title</key>
+			<string>Internal Domains</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>contoso.com, contoso.onmicrosoft.com</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether sharing a mailbox from inside the app is blocked.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.BlockSharing</string>
+			<key>pfm_title</key>
+			<string>Block Mail Sharing</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether sharing a calendar from inside the app is blocked.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Calendar.BlockSharing</string>
+			<key>pfm_title</key>
+			<string>Block Calendar Sharing</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether Outlook appends its own “Get Outlook for iOS” signature to new messages.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.DefaultSignatureEnabled</string>
+			<key>pfm_title</key>
+			<string>Default Signature</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether messages are grouped into conversations.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.OrganizeByThreadEnabled</string>
+			<key>pfm_title</key>
+			<string>Organize by Thread</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether Outlook offers one-tap suggested replies.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SuggestedRepliesEnabled</string>
+			<key>pfm_title</key>
+			<string>Suggested Replies</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change suggested replies on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SuggestedRepliesEnabled.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Suggested Replies — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether Outlook suggests words and phrases as the user composes.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.TextPredictionsEnabled</string>
+			<key>pfm_title</key>
+			<string>Text Predictions</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change text predictions on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.TextPredictionsEnabled.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Text Predictions — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the Play My Emails feature is promoted to eligible users with a banner in the inbox. Users can still turn it on themselves when this is off.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.PlayMyEmailsEnabled</string>
+			<key>pfm_title</key>
+			<string>Play My Emails</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether users can apply Outlook’s custom visual themes.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.ThemesEnabled</string>
+			<key>pfm_title</key>
+			<string>Themes</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>How many days of mail are kept on the device.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.DaysToSync</string>
+			<key>pfm_range_max</key>
+			<integer>90</integer>
+			<key>pfm_range_min</key>
+			<integer>1</integer>
+			<key>pfm_title</key>
+			<string>Days to Sync</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>days</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the sync window on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.DaysToSync.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Days to Sync — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Default font for composing. The name must be one of the fonts Office supports, and is not case-sensitive.
+
+Avoid bold and italic variants — pick the base family.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.defaultFontName</string>
+			<key>pfm_title</key>
+			<string>Default Font Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>Arial</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the default font on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.defaultFontName.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Default Font Name — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Default font size for composing, in points.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.defaultFontSize</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+				<integer>12</integer>
+				<integer>14</integer>
+				<integer>16</integer>
+				<integer>18</integer>
+				<integer>20</integer>
+				<integer>22</integer>
+				<integer>24</integer>
+				<integer>26</integer>
+				<integer>28</integer>
+				<integer>36</integer>
+				<integer>48</integer>
+				<integer>72</integer>
+			</array>
+			<key>pfm_title</key>
+			<string>Default Font Size</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>points</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the default font size on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.defaultFontSize.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Default Font Size — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether links always open in the device’s default browser instead of Outlook’s in-app browser.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.OpenLinks.UseSystemDefaultBrowser</string>
+			<key>pfm_title</key>
+			<string>Open Links in System Browser</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the Open Links settings page is shown to the user at all.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Settings.OpenLinks.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>Open Links — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether S/MIME signing and encryption are available.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled</string>
+			<key>pfm_note</key>
+			<string>S/MIME needs certificates already on the device. Turning this on without delivering a signing and encryption certificate leaves the user with a feature that fails on send.</string>
+			<key>pfm_title</key>
+			<string>S/MIME</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the S/MIME setting on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>S/MIME — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether every outgoing message must be signed.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.SignAllMail</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Sign All Mail</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the signing requirement on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.SignAllMail.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Sign All Mail — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether every outgoing message must be encrypted.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.EncryptAllMail</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Encrypt All Mail</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether the user can change the encryption requirement on their own device after the policy sets it.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.EncryptAllMail.UserChangeAllowed</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Encrypt All Mail — User Change Allowed</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Whether users pick their own signing and encryption certificates instead of letting Outlook choose.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.ManualCertSelect</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Manual Certificate Selection</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>LDAP directory Outlook queries for recipients’ S/MIME certificates.
+
+Accepts ldap://host, ldaps://host, or host, with an optional :port.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.LDAPHostName</string>
+			<key>pfm_title</key>
+			<string>S/MIME — LDAP Host Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>ldaps://contoso.com:636</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>0, 1, 2, 3</string>
+			<key>pfm_description</key>
+			<string>The order in which certificate sources are searched when signing and encrypting.
+
+Write the source numbers comma-separated: 0 Contacts, 1 Global Address List, 2 Device, 3 LDAP. You may list fewer than four.</string>
+			<key>pfm_name</key>
+			<string>com.microsoft.outlook.Mail.SMIMEEnabled.CertificatesLookupOrder</string>
+			<key>pfm_title</key>
+			<string>S/MIME — Certificate Lookup Order</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>3, 2, 0, 1</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>Microsoft Outlook</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>

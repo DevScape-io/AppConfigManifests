@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-setup-and-reset-configuration-guide/</string>
+	<key>pfm_description</key>
+	<string>Configure Jamf Setup, the Jamf Pro app a technician uses to tag a device at deployment. The technician picks one option from a list, and Jamf Setup writes it to a mobile device extension attribute on the device’s Jamf Pro record — which smart groups and scoped profiles can then act on.</string>
+	<key>pfm_documentation_url</key>
+	<string>https://learn.jamf.com/r/en-US/jamf-setup-reset-configuration-guide/Managed_App_Configuration_Setup</string>
+	<key>pfm_domain</key>
+	<string>com.jamf.setup</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+		<string>tvOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures Jamf Setup</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Jamf Setup</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.jamf.setup</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.jamf.setup</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Base URL of the Jamf Pro server the device is enrolled in, including the scheme.
+
+Enter the tenant root only — no trailing slash and no ‘/api’ path.
+
+Example: https://your-tenant.jamfcloud.com</string>
+			<key>pfm_format</key>
+			<string>^https?://[^\s/]+(/[^\s]*)?$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.jamfpro.url</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Jamf Pro URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>https://your-tenant.jamfcloud.com</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>$JSSID</string>
+			<key>pfm_description</key>
+			<string>The device’s Jamf Pro record ID, which Jamf Setup uses to write the selection back to inventory.
+
+Leave this as the Jamf Pro variable $JSSID so the ID is substituted at install time.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.jamfpro.device-id</string>
+			<key>pfm_note</key>
+			<string>If devices show a literal $JSSID, the value is not being delivered as App Configuration — Jamf Pro substitutes variables only in the app’s configuration, not in a static payload pasted elsewhere.</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>$JSSID</string>
+			</array>
+			<key>pfm_range_list_allow_custom_value</key>
+			<true/>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>$JSSID (substituted by Jamf Pro)</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Jamf Pro Device ID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$JSSID</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Display name of the mobile device extension attribute in Jamf Pro that receives the technician’s selection.
+
+The name must match the extension attribute in Jamf Pro exactly.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.setup.extension-attribute.name</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Extension Attribute Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>Device Role</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The choices shown on the main screen, in the order listed here. The value the technician picks is written to the extension attribute named above.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.setup.extension-attribute.options</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_title</key>
+					<string>Option</string>
+					<key>pfm_type</key>
+					<string>string</string>
+					<key>pfm_value_placeholder</key>
+					<string>Nurse</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>Extension Attribute Options</string>
+			<key>pfm_type</key>
+			<string>array</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>$OAUTH_AUTH_CODE</string>
+			<key>pfm_description</key>
+			<string>Authorisation code that enables OAuth between Jamf Setup and Jamf Pro.
+
+Leave this as the Jamf Pro variable $OAUTH_AUTH_CODE; Jamf Pro substitutes a per-device code at install time.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.oauth.authorization-code</string>
+			<key>pfm_note</key>
+			<string>Jamf Setup 3.0.0 and later no longer support basic authentication. Set this key — not Jamf Pro Username and Password — on any current deployment.</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>$OAUTH_AUTH_CODE</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>$OAUTH_AUTH_CODE (substituted by Jamf Pro)</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>OAuth Authorization Code</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$OAUTH_AUTH_CODE</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>$APP_CONFIG_REINSTALL_CODE</string>
+			<key>pfm_description</key>
+			<string>Authorisation code that lets Jamf Pro reinstall the app configuration on a device that already has one.
+
+Leave this as the Jamf Pro variable $APP_CONFIG_REINSTALL_CODE.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.reinstall-code</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>$APP_CONFIG_REINSTALL_CODE</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>$APP_CONFIG_REINSTALL_CODE (substituted by Jamf Pro)</string>
+			</array>
+			<key>pfm_title</key>
+			<string>App Config Reinstall Code</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$APP_CONFIG_REINSTALL_CODE</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Jamf Pro account name used for basic authentication.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.jamfpro.username</string>
+			<key>pfm_note</key>
+			<string>Legacy. Basic authentication was removed in Jamf Setup 3.0.0; use the OAuth Authorization Code instead.</string>
+			<key>pfm_title</key>
+			<string>Jamf Pro Username</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Password for the Jamf Pro account named above.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.jamfpro.password</string>
+			<key>pfm_note</key>
+			<string>Legacy, and a credential. Basic authentication was removed in Jamf Setup 3.0.0. If you must set it on an older build, deliver it in an encrypted profile — never in a plain-text profile committed to source control.</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Jamf Pro Password</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Whether basic authentication is accepted alongside OAuth.
+
+Turn this off once every device runs Jamf Setup 3.0.0 or later.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.legacy-compatibility</string>
+			<key>pfm_title</key>
+			<string>Legacy Compatibility</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>URL of an image shown at the top of the screen, used for branding.
+
+Overridden by the iPhone- and iPad-specific keys below when either is set.</string>
+			<key>pfm_format</key>
+			<string>^https?://[^\s/]+(/[^\s]*)?$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.header-image.url</string>
+			<key>pfm_title</key>
+			<string>Header Image URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>https://example.com/logo.png</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>URL of the header image to use on iPhone only.</string>
+			<key>pfm_format</key>
+			<string>^https?://[^\s/]+(/[^\s]*)?$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.header-image.url.iphone</string>
+			<key>pfm_title</key>
+			<string>Header Image URL — iPhone</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>https://example.com/logo-iphone.png</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>URL of the header image to use on iPad only.</string>
+			<key>pfm_format</key>
+			<string>^https?://[^\s/]+(/[^\s]*)?$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.header-image.url.ipad</string>
+			<key>pfm_title</key>
+			<string>Header Image URL — iPad</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>https://example.com/logo-ipad.png</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Select your role</string>
+			<key>pfm_description</key>
+			<string>Heading at the top of the main screen.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.main-page.title</string>
+			<key>pfm_title</key>
+			<string>Main Page Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Please choose your role from the list below and then hit submit to configure your device</string>
+			<key>pfm_description</key>
+			<string>Smaller helper text under the heading, telling the technician what to do.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.main-page.text</string>
+			<key>pfm_title</key>
+			<string>Main Page Help Text</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Submit</string>
+			<key>pfm_description</key>
+			<string>Label on the submit button.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.main-page.button.text</string>
+			<key>pfm_title</key>
+			<string>Main Page Button Text</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Success!</string>
+			<key>pfm_description</key>
+			<string>Heading shown once the selection has been written to inventory.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.success-page.title</string>
+			<key>pfm_title</key>
+			<string>Success Page Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>You have selected: $SELECTION</string>
+			<key>pfm_description</key>
+			<string>Helper text on the success screen. $SELECTION is replaced with the option the technician picked.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.success-page.text</string>
+			<key>pfm_title</key>
+			<string>Success Page Help Text</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Uh oh, there was an error that the app cannot recover from on its own.\nPlease contact your IT admin</string>
+			<key>pfm_description</key>
+			<string>Extra text shown to the technician when Jamf Setup hits an error it cannot recover from.
+
+Use the two-character sequence \n where you want a line break.</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.setup.error.general.text</string>
+			<key>pfm_title</key>
+			<string>Error Text</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>#37BB9A</string>
+			<key>pfm_description</key>
+			<string>Fill colour of the submit button, as a six-digit hex value.</string>
+			<key>pfm_format</key>
+			<string>^#[0-9A-Fa-f]{6}$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.main-page.button.color</string>
+			<key>pfm_title</key>
+			<string>Button Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#37BB9A</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>#F8F8F8</string>
+			<key>pfm_description</key>
+			<string>Colour of the text on the submit button, as a six-digit hex value.</string>
+			<key>pfm_format</key>
+			<string>^#[0-9A-Fa-f]{6}$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.main-page.button.text.color</string>
+			<key>pfm_title</key>
+			<string>Button Text Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#F8F8F8</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>#F8F8F8</string>
+			<key>pfm_description</key>
+			<string>Background colour of every screen, as a six-digit hex value.</string>
+			<key>pfm_format</key>
+			<string>^#[0-9A-Fa-f]{6}$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.background.color</string>
+			<key>pfm_title</key>
+			<string>Background Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#F8F8F8</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>#444444</string>
+			<key>pfm_description</key>
+			<string>Colour of all text except the button and table text, as a six-digit hex value.</string>
+			<key>pfm_format</key>
+			<string>^#[0-9A-Fa-f]{6}$</string>
+			<key>pfm_name</key>
+			<string>com.jamf.config.ui.text.color</string>
+			<key>pfm_title</key>
+			<string>Text Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#444444</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>Jamf Setup</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>

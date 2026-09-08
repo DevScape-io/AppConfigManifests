@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_app_url</key>
+	<string>https://www.crowdstrike.com/platform/endpoint-security/falcon-for-mobile/</string>
+	<key>pfm_description</key>
+	<string>Configure the CrowdStrike Falcon sensor on iPhone and iPad — which tenant and cloud the device registers with, and how the host is identified once it appears in the Falcon console.
+
+On iOS these values are not delivered as a standalone app configuration: they go in the VendorConfig dictionary of a Content Filter payload whose filter identifier is com.crowdstrike.falconmobile. Build the dictionary here, then paste it into that payload’s custom data.</string>
+	<key>pfm_domain</key>
+	<string>com.crowdstrike.falconmobile</string>
+	<key>pfm_format_version</key>
+	<integer>1</integer>
+	<key>pfm_interaction</key>
+	<string>exclusive</string>
+	<key>pfm_last_modified</key>
+	<date>2026-09-08T00:00:00Z</date>
+	<key>pfm_platforms</key>
+	<array>
+		<string>iOS</string>
+		<string>iPadOS</string>
+	</array>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures CrowdStrike Falcon for Mobile</string>
+			<key>pfm_description</key>
+			<string>The human-readable description of this payload. This description appears on the Detail screen.</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>CrowdStrike Falcon</string>
+			<key>pfm_description</key>
+			<string>The human-readable name for the profile payload. The name appears on the Detail screen and doesn’t need to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.crowdstrike.falconmobile</string>
+			<key>pfm_description</key>
+			<string>The reverse-DNS-style identifier for the payload. This identifier is usually the same as the TopLevel value, with an additional appended component. This string must be unique within the profile.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.crowdstrike.falconmobile</string>
+			<key>pfm_description</key>
+			<string>The payload type, which each payload domain’s reference page specifies.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>The globally unique identifier for the payload. The actual content is unimportant, but must be globally unique. In macOS, use ‘uuidgen’ to generate UUIDs.
+During a profile replacement, the system updates payloads with the same ‘PayloadIdentifier’ and ‘PayloadUUID’ in the old and new profiles.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of this specific payload.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>1</integer>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The human-readable string containing the name of the organization that provides the profile. This value doesn’t need to match the organization payload value in the enclosing dictionary.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Your CrowdStrike customer ID checksum (CCID).
+
+Find it in the Falcon console under Host setup and management › Deploy › Sensor downloads.</string>
+			<key>pfm_name</key>
+			<string>customer_id</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Customer ID (CCID)</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>ABCDEF0123456789ABCDEF0123456789-01</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The Falcon cloud your tenant lives in — us-1, us-2, eu-1, us-gov-1, and so on.
+
+Take the value from the MDM enrolment wizard in the Falcon console rather than typing it by hand.</string>
+			<key>pfm_name</key>
+			<string>cloud_id</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Cloud ID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>us-1</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Provisioning token that authorises the sensor to register with your tenant.</string>
+			<key>pfm_name</key>
+			<string>provisioning_token</string>
+			<key>pfm_note</key>
+			<string>This value is a credential. Deliver it in an encrypted profile, never in a plain-text profile committed to source control, and rotate it if it is ever exported in the clear.</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Provisioning Token</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>••••••••••••••••</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Falcon API host the sensor reports to, as given by the MDM enrolment wizard for your cloud.</string>
+			<key>pfm_name</key>
+			<string>hostname</string>
+			<key>pfm_title</key>
+			<string>Hostname</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>api.crowdstrike.com</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Email address of the device’s assigned user, used to identify the host in the Falcon console.
+
+Use your MDM’s user variable so it is filled in per device — $EMAIL in Jamf Pro, {{mail}} in Intune.</string>
+			<key>pfm_name</key>
+			<string>user_email</string>
+			<key>pfm_title</key>
+			<string>User Email</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$EMAIL</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The MDM’s own identifier for this device, carried into the Falcon host record so the two inventories can be reconciled.</string>
+			<key>pfm_name</key>
+			<string>mdm_device_id</string>
+			<key>pfm_title</key>
+			<string>MDM Device ID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>$UDID</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Grouping tags applied to the host at registration, so it lands in the right host groups without a manual step.
+
+List them comma-separated, with no spaces.</string>
+			<key>pfm_name</key>
+			<string>grouping_tags</string>
+			<key>pfm_title</key>
+			<string>Grouping Tags</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>Corporate,Field-Staff</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Whether the sensor skips the legal notice the user would otherwise have to accept on first launch.
+
+Set this only where your organisation has told users separately what the sensor collects.</string>
+			<key>pfm_name</key>
+			<string>skip_legal</string>
+			<key>pfm_title</key>
+			<string>Skip Legal Notice</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>pfm_targets</key>
+	<array>
+		<string>system</string>
+	</array>
+	<key>pfm_title</key>
+	<string>CrowdStrike Falcon for Mobile</string>
+	<key>pfm_unique</key>
+	<true/>
+	<key>pfm_version</key>
+	<integer>1</integer>
+</dict>
+</plist>
